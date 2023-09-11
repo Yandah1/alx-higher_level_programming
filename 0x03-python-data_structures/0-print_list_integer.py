@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 def print_list_integer(my_list=[]):
-    for element in my_list:
-        if isinstance(element, int):
-            print("{:d}".format(element))
+    for elements my_list:
+        if type(elements) == int:
+            print("{:d}".format(elements))
 
 
 my_list = [1, 2, 3, 4, 5]
