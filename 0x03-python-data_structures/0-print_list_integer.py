@@ -3,7 +3,7 @@
 def print_list_integer(my_list=[]):
     for elements my_list:
         if type(elements) == int:
-            print("{:d}".format(elements))
+            print("{}".format(elements))
 
 
 my_list = [1, 2, 3, 4, 5]
