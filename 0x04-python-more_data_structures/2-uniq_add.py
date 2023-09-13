@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    unique_list = [x for x in my_list if my_list.count(x) == 1]
+    unique_list = set(my_list)
+    num = 0
 
-    return sum(set(unique_list))
+    for i in unique_list:
+        num += i
+
+    return (num)
