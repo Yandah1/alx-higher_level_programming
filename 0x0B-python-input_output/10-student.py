@@ -27,6 +27,6 @@ class Student:
         attri = {}
         for attr in attrs:
             if hasattr(self, attr) and isinstance(getattr(self, attr),
-                    (list, dict, str, int, bool)):
+                         (list, dict, str, int, bool)):
                 attri[attr] = getattr(self, attr)
-        return attri
+        return attrii
