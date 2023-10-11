@@ -6,11 +6,11 @@
 def append_after(filename="", search_string="", new_string=""):
     """ function that appends after
     """
-    with open(filename, 'r') as file:
-        lines = file.readlines()
-
-    with open(filename, 'w') as file:
-        for line in lines:
-            filw.write(line)
+    text = ""
+    with open(filename) as r:
+        for line in r:
+            text += line
             if search_string in line:
-                file.write(new_string + '\n')
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
