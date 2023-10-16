@@ -108,5 +108,42 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return the string representation of the Rectangle instance."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y}
-        - {self.width}/{self.height}"
+        sides = (
+                self.id,
+                self.x,
+                self.y,
+                self.width,
+                self.height
+                )
+        res = '[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'.format(
+                sides[0], sides[1], sides[2], sides[3], sides[4]
+                )
+        return res
+
+    def update(self, *args, **kwargs):
+        """Updates the attributes of this rectangle.
+        Args:
+            args (tuple): A tuple of non-keyword arguments.
+            kwargs (dict): A dictionary of keyword arguments.
+        """
+        attrs = ('id', 'width', 'height', 'x', 'y')
+        for key, val in zip(attrs, args):
+            setattr(self, key, val)
+        if (type(args) is None or len(args) == 0) and (type(kwargs) is dict):
+            for key, val in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, val)
+
+    def to_dictionary(self):
+        """Creates a dictionary representation of this rectangle.
+        Returns:
+            dict: A dictionary representation of this rectangle.
+        """
+        res = {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+        return res
