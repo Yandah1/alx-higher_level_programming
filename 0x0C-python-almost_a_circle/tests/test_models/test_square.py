@@ -65,7 +65,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'x must be >= 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Square(6, 3, -7)
-        self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be > 0')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Square(10, 13, 3, 7, 12)
 

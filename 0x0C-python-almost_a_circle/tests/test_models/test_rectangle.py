@@ -74,7 +74,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'x must be >= 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon = Rectangle(6, 9, 3, -7)
-        self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be > 0')
         with self.assertRaises(TypeError) as asrt_ctxt:
             polygon = Rectangle(10, 13, 3, 7, 1, 12)
         with self.assertRaises(OverflowError):
@@ -222,7 +222,7 @@ class TestRectangle(unittest.TestCase):
             Rectangle(5, 3).y = int(float('nan'))
         with self.assertRaises(ValueError) as asrt_ctxt:
             Rectangle(5, 3).y = -5
-        self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be > 0')
         # endregion
 
     def test_area(self):
