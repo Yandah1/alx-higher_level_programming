@@ -55,7 +55,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise TypeError("height must be > 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @width.setter
@@ -67,7 +67,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise TypeError("width must be > 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @x.setter
@@ -79,8 +79,8 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if value <= 0:
-            raise TypeError("x must be >= 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @y.setter
@@ -88,8 +88,8 @@ class Rectangle(Base):
         """Set the vertical position of the rectangle."""
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        if value <= 0:
-            raise TypeError("y must be > 0")
+        if value < 0:
+            raise ValueError("y must be > 0")
         self.__y = value
 
     def area(self):

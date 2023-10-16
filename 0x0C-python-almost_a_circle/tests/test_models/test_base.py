@@ -411,7 +411,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(asrt_ctxt.exception), 'x must be >= 0')
         with self.assertRaises(ValueError) as asrt_ctxt:
             polygon.update(y=-10, id='35')
-        self.assertEqual(str(asrt_ctxt.exception), 'y must be >= 0')
+        self.assertEqual(str(asrt_ctxt.exception), 'y must be > 0')
         # endregion
 
     def test_save_to_file(self):
