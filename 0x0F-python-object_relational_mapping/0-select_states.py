@@ -6,6 +6,7 @@
 import sys
 import MySQLdb
 
+
 def list_all_states():
     '''list all states in db'''
     username = sys.argv[1]
@@ -27,4 +28,3 @@ def list_all_states():
 
 if __name__ == '__main__':
     list_all_states()
-
