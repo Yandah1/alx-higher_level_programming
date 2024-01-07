@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-This script sends a request to the specified URL and displays the body of the response
-(decoded in utf-8).
+This script sends a request to the specified URL and
+ displays the body of the response (decoded in utf-8).
 '''
 
 import sys
