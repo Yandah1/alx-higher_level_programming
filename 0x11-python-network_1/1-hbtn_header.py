@@ -4,13 +4,11 @@ This script retrieves the value of the X-Request-Id variable
 from the header of the response.
 '''
 
+import sys
+import urllib.request
 
 if __name__ == "__main__":
-
-    import sys
-    import urllib.request
-
     url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
-        X_Request_Id = response.getheader('X-Request-Id')
-        print(X_Request_Id)
+        x_request_id = response.headers.get('X-Request-Id')
+        print(x_request_id)
