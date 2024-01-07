@@ -10,11 +10,13 @@ import requests
 if __name__ == "__main__":
 
     username = sys.argv[1]
-    access_token = sys.argv[2]
+    token = sys.argv[2]
 
-    url = f"https://api.github.com/user"
-    headers = {
-            'Authorization': 'access_token {}'.format(access_token)
-            }
-    response = requests.get(url, headers=headers)
-    print(response.json().get('id', 'None'))
+    url = "https://api.github.com/user"
+    response = requests.get(url, auth=(username, token))
+
+    try:
+        data_json = response.json()
+        print(data_json["id"])
+    except Exception:
+        print("None")
