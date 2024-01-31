@@ -8,7 +8,7 @@ if (process.argv.length > 2) {
   const result = {};
   request(process.argv[2], (error, response, body) => {
     if (error) {
-      console.log(err);
+      console.log(error);
     } else {
       const data = JSON.parse(body);
       data.filter(task => {
